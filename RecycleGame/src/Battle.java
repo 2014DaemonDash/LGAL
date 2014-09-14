@@ -38,6 +38,12 @@ public class Battle {
 		return playerWin;
 	}
 	
+	/*
+	 * This method adds a slight randomness factor to the battling portion of
+	 * the game. Each time a player attacks there is a 5% chance that the 
+	 * player will miss. This method runs the random number generator and 
+	 * returns whether or not an attack missed
+	 */
 	public boolean miss() {
 		boolean miss = false;
 		Random random = new Random();

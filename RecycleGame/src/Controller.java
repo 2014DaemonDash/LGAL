@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 
-
+/*
+ * This class allows management of the players and can determine the leader board
+ */
 public class Controller {
 
 	ArrayList <Player> players;
@@ -8,7 +10,13 @@ public class Controller {
 	public void addPlayer (String username) {
 		players.add(new Player (username));
 	}
-
+	
+	/*
+	 * This method assigns each player a rank by sorting them first by level, 
+	 * and then differentiating level ties with win ratio. After creating a sorted 
+	 * ArrayList of Players, the method uses that list to update the rank field 
+	 * in the Player class
+	 */
 	public void rankPlayers () {
 		int high = 20;
 		ArrayList <Player> temp = new ArrayList <Player>();
@@ -39,6 +47,11 @@ public class Controller {
 					ranked.add(p);
 				}
 			}
+		}
+		int counter = 1;
+		for (Player p: ranked) {
+			p.setRank(counter);
+			counter++;
 		}
 		
 		
