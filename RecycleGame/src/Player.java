@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 
 public class Player {
-	private Points points;
+	Points points;
 	private String name;
 	Stats stats;
 	private ArrayList <Item> rInventory;
@@ -48,6 +48,7 @@ public class Player {
 		if (rInventory.contains(item)) {
 			rInventory.remove(item);
 			points.addExp(item.getValue());
+			levelUp();
 			return true;
 		} else {
 			return false;
@@ -110,6 +111,9 @@ public class Player {
 	}
 	
 
+	/*
+	 * equips a weapon and alters stats
+	 */
 	public void addWeapon(Weapon weapon) {
 		if (weapon.type == Weapon.Type.SWORD && stats.attackEquipped() == false) {
 			if (weapon.getLevel() == 1)

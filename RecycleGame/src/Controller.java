@@ -6,7 +6,10 @@ import java.util.ArrayList;
 public class Controller {
 
 	ArrayList <Player> players;
-
+	
+	/*
+	 * This adds a Player to the players list
+	 */
 	public void addPlayer (String username) {
 		players.add(new Player (username));
 	}
